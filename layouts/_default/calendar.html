@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="wrap prose">
-  <h1>{{ .Title }}</h1>
+  {{ if not .Params.hero }}<h1>{{ .Title }}</h1>{{ end }}
   {{ .Content }}
   {{ $today := now.Format "2006-01-02" }}
   {{ $items := sort (where hugo.Data.calendar "date" "ge" $today) "date" }}

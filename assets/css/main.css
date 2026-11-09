@@ -95,3 +95,13 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
 .gallery .photo img{max-height:none;width:100%}
 .card .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;margin:-.1rem 0 .6rem}
 .pager{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:2rem 0;font-weight:600}
+.page-hero{position:relative;overflow:hidden;background:var(--blue-dark);color:#fff;min-height:clamp(15rem,32vw,24rem);display:flex;align-items:flex-end;padding:3rem 0 1.75rem;margin-bottom:1.5rem}
+.page-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,26,77,.92) 0%,rgba(0,34,102,.55) 55%,rgba(0,34,102,.15) 100%)}
+.page-hero .wrap{position:relative;z-index:2;width:100%}
+.page-hero h1{margin:0 0 .4rem;font-size:clamp(1.7rem,4vw,2.6rem);text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.page-hero .lead{font-size:1.05rem;margin:0;max-width:60ch;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.photo-credit{position:absolute;z-index:2;right:.75rem;bottom:.4rem;margin:0;font-size:.75rem;color:#fff;opacity:.85}
+@media (max-width:40rem){.page-hero{min-height:13rem}.page-hero .lead{font-size:.95rem}}
+.page-hero .hero-bg{object-position:center center}
+.page-hero.pos-top .hero-bg{object-position:center 15%}
+.page-hero.pos-bottom .hero-bg{object-position:center 85%}

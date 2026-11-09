@@ -9,6 +9,9 @@ event:
   venue: Priory Park
   locality: Bodmin
   action: "Ticket details are posted on the [Bodmin Fireworks Facebook page](https://www.facebook.com/BodminFireworks) in October."
+hero: images/heroes/fireworks-2018.jpg
+heroAlt: "Fireworks over Priory Park, Bodmin"
+heroCredit: "Photo: Paul Hockaday, Bodmin Camera Club"
 ---
 Bodmin Lions are part of the joint committee that organises the 5 November fireworks display in Priory Park. We think it's the best Bonfire Night display in North Cornwall, at a great price.
 

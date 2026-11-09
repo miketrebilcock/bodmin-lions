@@ -1,6 +1,9 @@
 ---
 title: Contact us
 description: Email Bodmin Lions Club, find our monthly meeting at the Hole in the Wall, Bodmin, and follow us on Facebook.
+hero: images/heroes/priory-park-lions.png
+heroAlt: "Three Bodmin Lions taking a break at the Priory Park summer event"
+heroAnchor: Top
 ---
 **Email:** [bodmin.lions@outlook.com](mailto:bodmin.lions@outlook.com)
 

@@ -8,6 +8,9 @@ event:
   when: Friday 5 March 2027
   venue: Fore Street to Mount Folly, then St Petroc's Church
   locality: Bodmin
+hero: images/heroes/st-pirans-day-2026.jpg
+heroAlt: "St Piran's Day 2026: the Mayor and guests with Cornish flags outside the Shire Hall, Bodmin"
+heroAnchor: Top
 ---
 St Piran is the patron saint of Cornwall and of tin miners. Legend says the 6th-century abbot discovered tin when a black stone in his fire melted and a white cross of tin ran out of it — the origin of St Piran's flag, the flag of Cornwall.
 

@@ -9,6 +9,10 @@ event:
   when: Friday 27 November to Saturday 19 December 2026
   venue: Streets of Bodmin and ASDA Bodmin
   action: "Volunteers needed — [email us](mailto:bodmin.lions@outlook.com?subject=Sleigh%20volunteer)."
+hero: images/heroes/father-christmas-sleigh.jpg
+heroAlt: "Father Christmas waving from the lit-up Bodmin Lions sleigh"
+heroCredit: "Photo: Leonard Reid, Bodmin Camera Club"
+heroAnchor: Top
 ---
 Every December we take our sleigh around the streets of Bodmin collecting for Lions and other charities. In December 2025 the people of Bodmin gave **£5,183** — thank you.
 

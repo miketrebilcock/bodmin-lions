@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="wrap">
-  <div class="prose"><h1>{{ .Title }}</h1>{{ .Content }}</div>
+  <div class="prose">{{ if not .Params.hero }}<h1>{{ .Title }}</h1>{{ end }}{{ .Content }}</div>
   {{ $pages := .Pages }}
   {{ $pager := .Paginate $pages }}
   <ul class="cards">

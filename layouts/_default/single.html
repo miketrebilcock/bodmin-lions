@@ -1,6 +1,6 @@
 {{ define "main" }}
 <article class="wrap prose">
-  <h1>{{ .Title }}</h1>
+  {{ if not .Params.hero }}<h1>{{ .Title }}</h1>{{ end }}
   {{ if eq .Section "news" }}<p class="meta">{{ partial "date.html" . }}</p>{{ end }}
   {{ with .Params.event }}{{ partial "event-facts.html" . }}{{ end }}
   {{ with .Params.image }}{{ partial "img.html" (dict "src" . "alt" $.Params.imageAlt "eager" true) }}{{ end }}

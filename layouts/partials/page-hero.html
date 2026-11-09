@@ -1,0 +1,14 @@
+{{- with .Params.hero }}{{ with resources.Get . }}
+{{- $anchor := $.Params.heroAnchor | default "Smart" }}
+{{- $w := cond (gt .Width 1600) 1600 .Width }}
+{{- $l := .Fill (printf "%dx%d %s webp q74" $w (int (mul $w 0.45)) $anchor) }}
+{{- $s := .Fill (printf "640x360 %s webp q68" $anchor) }}
+<section class="page-hero pos-{{ lower $anchor }}">
+  <img class="hero-bg" src="{{ $l.RelPermalink }}" srcset="{{ $s.RelPermalink }} 640w, {{ $l.RelPermalink }} {{ $l.Width }}w" sizes="100vw" width="{{ $l.Width }}" height="{{ $l.Height }}" alt="{{ $.Params.heroAlt }}" fetchpriority="high">
+  <div class="wrap">
+    <h1>{{ $.Title }}</h1>
+    {{ with $.Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+  {{ with $.Params.heroCredit }}<p class="photo-credit">{{ . }}</p>{{ end }}
+</section>
+{{- end }}{{ end -}}
