@@ -3,7 +3,7 @@ title: About Bodmin Lions
 description: The history of Bodmin Lions Club, chartered in 1970, how the club works, and how the money we raise is used.
 hero: images/heroes/lions-group-2026.jpg
 heroAlt: "A group of Bodmin Lions members"
-heroY: 40
+heroY: 30
 ---
 ## Our history
 

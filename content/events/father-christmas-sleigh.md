@@ -11,7 +11,7 @@ event:
   action: "Volunteers needed — [email us](mailto:bodmin.lions@outlook.com?subject=Sleigh%20volunteer)."
 hero: images/heroes/father-christmas-sleigh-night.jpg
 heroAlt: "Father Christmas on the Bodmin Lions sleigh, lit up with coloured lights at night"
-heroY: 35
+heroY: 60
 ---
 Every December we take our sleigh around the streets of Bodmin collecting for Lions and other charities. In December 2025 the people of Bodmin gave **£5,183** — thank you.
 

@@ -15,7 +15,8 @@ on every push to `main` (and nightly). Club members will usually ask for content
 - **Migrated posts** (`migrated: true`) came from the old site in Nov 2026. 64 photos still have placeholder
   alt text ("Photo 3: <title>") — when touching a post, look at the photo and replace it with a real description.
 - **Page hero photos:** set `hero: images/heroes/<file>.jpg`, `heroAlt: "…"`, optional `heroCredit: "Photo: …"`
-  and `heroY: 0–100` (vertical focus, steps of 10; 50 = centre, lower shows more of the top) in the page's front matter.
+  and `heroY` (vertical focus: 0, 10, 20 … 100 only; 50 = centre, smaller shows more of the top, larger more of the bottom).
+  Photos under 1300px wide automatically use a split layout (photo on the right half) so they aren't stretched and blurred in the page's front matter.
   Before adding a photo to `assets/images/heroes/`, resize it to at most 1920px and strip metadata:
   `magick in.jpg -auto-orient -resize '1920x1920>' -strip -interlace JPEG -quality 82 out.jpg`.
   Check the crop in a browser at desktop and phone widths. `fb_images/` is a git-ignored scratch folder.
