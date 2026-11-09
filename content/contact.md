@@ -1,9 +1,9 @@
 ---
 title: Contact us
 description: Email Bodmin Lions Club, find our monthly meeting at the Hole in the Wall, Bodmin, and follow us on Facebook.
-hero: images/heroes/fore-street-quiet.jpg
-heroAlt: "Fore Street, Bodmin, hung with Lions bunting"
-heroY: 80
+hero: images/heroes/fore-street-morris.jpg
+heroAlt: "Morris dancers and musicians performing in a busy Fore Street, Bodmin"
+heroY: 60
 ---
 **Email:** [bodmin.lions@outlook.com](mailto:bodmin.lions@outlook.com)
 
