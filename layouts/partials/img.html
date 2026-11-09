@@ -1,0 +1,9 @@
+{{- with resources.Get .src }}
+{{- $w := cond (gt .Width 900) 900 .Width }}
+{{- $img := .Resize (printf "%dx webp q75" $w) }}
+{{- $sm := .Resize "480x webp q70" }}
+<figure>
+  <img src="{{ $img.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 480w, {{ $img.RelPermalink }} {{ $img.Width }}w" sizes="(max-width: 900px) 100vw, 900px" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.alt }}"{{ if not $.eager }} loading="lazy"{{ end }}>
+  {{ with $.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- end }}

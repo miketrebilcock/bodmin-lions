@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap">
+    <h1>Volunteers making a difference in Bodmin since 1970</h1>
+    <p class="lead">We're your local Lions Club. We run the Ten Tors walk on Bodmin Moor, take Father Christmas round the town every December, help put on the Priory Park fireworks — and every penny we raise from the public goes to good causes.</p>
+    <p class="cta-row">
+      <a class="btn btn-primary" href="/join/">Join or volunteer</a>
+      <a class="btn" href="/funding/">Ask us for help</a>
+      <a class="btn" href="/calendar/">What's on</a>
+    </p>
+  </div>
+</section>
+
+{{ $soon := where (where site.RegularPages "Section" "events") "Params.event.start" "ge" (now.Format "2006-01-02") }}
+<section class="wrap" aria-labelledby="coming-up">
+  <h2 id="coming-up">Coming up</h2>
+  <ul class="cards">
+  {{ range first 3 (sort $soon "Params.event.start") }}
+    <li class="card">
+      <p class="meta">{{ .Params.event.when }}</p>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Description }}</p>
+    </li>
+  {{ end }}
+  </ul>
+</section>
+
+<section class="band" aria-labelledby="impact">
+  <div class="wrap">
+    <h2 id="impact">What your support did this year</h2>
+    <ul class="stats">
+      <li><strong>£20,000+</strong> raised by 83 teams on the 2026 Ten Tors walk</li>
+      <li><strong>£5,183</strong> collected by the Father Christmas sleigh, December 2025</li>
+      <li><strong>30 years</strong> of fireworks in Priory Park — profits go to local youth groups</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="latest">
+  <h2 id="latest">Latest news</h2>
+  <ul class="cards">
+  {{ range first 3 (where site.RegularPages "Section" "news") }}
+    <li class="card">
+      <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></p>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Summary | plainify | truncate 140 }}</p>
+    </li>
+  {{ end }}
+  </ul>
+  <p><a href="/news/">All news →</a></p>
+</section>
+
+<section class="wrap prose" aria-labelledby="about-us">
+  <h2 id="about-us">Who we are</h2>
+  {{ .Content }}
+</section>
+{{ end }}

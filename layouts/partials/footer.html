@@ -1,0 +1,22 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="f-contact">
+      <h2 id="f-contact">Contact</h2>
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+      <p>{{ site.Params.meetings }}, {{ site.Params.meetingVenue }}.</p>
+      <p><a href="{{ site.Params.facebook }}">Bodmin Lions on Facebook</a></p>
+    </section>
+    <section aria-labelledby="f-more">
+      <h2 id="f-more">More</h2>
+      <ul>
+        {{- range site.Menus.footer }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        <li><a href="/index.xml">News feed (RSS)</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="f-charity">
+      <h2 id="f-charity">The charity</h2>
+      <p>Bodmin Lions Club is a Charitable Incorporated Organisation, <a href="https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/{{ site.Params.charityNumber }}">registered charity number {{ site.Params.charityNumber }}</a>, and part of <a href="https://lionsclubs.co.uk/">Lions Clubs International British Isles</a>, District 105SW.</p>
+      <p>© {{ now.Year }} Bodmin Lions Club</p>
+    </section>
+  </div>
+</footer>

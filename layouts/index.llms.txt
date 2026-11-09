@@ -1,0 +1,25 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+- Registered charity (England & Wales): {{ site.Params.charityNumber }} (Charitable Incorporated Organisation)
+- Part of Lions Clubs International, British Isles, District 105SW
+- Founded (chartered): 28 April 1970
+- Contact: {{ site.Params.email }}
+- Meetings: {{ site.Params.meetings }}, {{ site.Params.meetingVenue }}
+- Officers: President {{ site.Params.president }}; Secretary {{ site.Params.secretary }}; Treasurer {{ site.Params.treasurer }}
+
+## Events we run or support
+{{ range sort (where site.RegularPages "Section" "events") "Params.event.start" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }} Next: {{ .Params.event.when }}, {{ .Params.event.venue }}.
+{{- end }}
+
+## Key pages
+{{ range where site.RegularPages "Section" "" }}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}
+{{- end }}
+
+## Recent news
+{{ range first 10 (where site.RegularPages "Section" "news") }}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "2006-01-02" }})
+{{- end }}

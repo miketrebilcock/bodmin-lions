@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="wrap prose">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ $today := now.Format "2006-01-02" }}
+  {{ $items := sort (where hugo.Data.calendar "date" "ge" $today) "date" }}
+  {{ if $items }}
+  <ol class="calendar">
+    {{ range $items }}
+    <li>
+      <time datetime="{{ .date }}">{{ (time.AsTime .date).Format "Monday 2 January 2006" }}</time>
+      <span>{{ if .page }}<a href="{{ .page }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}{{ with .note }} <small>— {{ . }}</small>{{ end }}</span>
+    </li>
+    {{ end }}
+  </ol>
+  {{ else }}<p>No dates published yet — check back soon.</p>{{ end }}
+</div>
+{{ end }}

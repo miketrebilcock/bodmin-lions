@@ -1,0 +1,6 @@
+<dl class="facts">
+  <div><dt>When</dt><dd>{{ .when }}</dd></div>
+  <div><dt>Where</dt><dd>{{ .venue }}{{ with .locality }}, {{ . }}{{ end }}</dd></div>
+  {{ with .cost }}<div><dt>Cost</dt><dd>{{ . }}</dd></div>{{ end }}
+  {{ with .action }}<div><dt>How to take part</dt><dd>{{ . | markdownify }}</dd></div>{{ end }}
+</dl>

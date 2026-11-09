@@ -1,0 +1,37 @@
+{{- $org := dict
+  "@type" "NGO"
+  "@id" (printf "%s#org" site.BaseURL)
+  "name" "Bodmin Lions Club"
+  "alternateName" "The Lions Club of Bodmin"
+  "url" site.BaseURL
+  "email" site.Params.email
+  "description" site.Params.description
+  "foundingDate" site.Params.founded
+  "nonprofitStatus" "Nonprofit"
+  "identifier" (dict "@type" "PropertyValue" "propertyID" "Charity Commission for England and Wales" "value" site.Params.charityNumber)
+  "parentOrganization" (dict "@type" "NGO" "name" "Lions Clubs International" "url" "https://www.lionsclubs.org/")
+  "areaServed" (dict "@type" "Place" "name" "Bodmin, Cornwall, United Kingdom")
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Bodmin" "addressRegion" "Cornwall" "addressCountry" "GB")
+  "sameAs" (slice site.Params.facebook (printf "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/%s" site.Params.charityNumber))
+-}}
+{{- $graph := slice $org (dict "@type" "WebSite" "@id" (printf "%s#site" site.BaseURL) "url" site.BaseURL "name" site.Title "inLanguage" "en-GB" "publisher" (dict "@id" (printf "%s#org" site.BaseURL))) -}}
+{{- with .Params.event }}
+  {{- $ev := dict
+    "@type" "Event"
+    "name" .name
+    "description" ($.Description | default $.Summary | plainify)
+    "startDate" .start
+    "eventStatus" "https://schema.org/EventScheduled"
+    "eventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode"
+    "location" (dict "@type" "Place" "name" .venue "address" (dict "@type" "PostalAddress" "addressLocality" (.locality | default "Bodmin") "addressRegion" "Cornwall" "addressCountry" "GB"))
+    "organizer" (dict "@id" (printf "%s#org" site.BaseURL))
+    "url" $.Permalink
+  -}}
+  {{- with .end }}{{ $ev = merge $ev (dict "endDate" .) }}{{ end }}
+  {{- with .price }}{{ $ev = merge $ev (dict "offers" (dict "@type" "Offer" "price" . "priceCurrency" "GBP" "url" $.Permalink)) }}{{ end }}
+  {{- $graph = $graph | append $ev }}
+{{- end }}
+{{- if and .IsPage (eq .Section "news") }}
+  {{- $graph = $graph | append (dict "@type" "NewsArticle" "headline" .Title "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "publisher" (dict "@id" (printf "%s#org" site.BaseURL)) "mainEntityOfPage" .Permalink) }}
+{{- end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>

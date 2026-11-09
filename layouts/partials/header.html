@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Bodmin Lions Club home">
+      <span class="brand-mark" aria-hidden="true">🦁</span>
+      <span class="brand-text"><strong>Bodmin Lions</strong><span>We serve · Dynergh</span></span>
+    </a>
+    <nav aria-label="Main">
+      <details class="nav-toggle">
+        <summary>Menu</summary>
+        {{ template "menu" . }}
+      </details>
+      <div class="nav-wide">{{ template "menu" . }}</div>
+    </nav>
+  </div>
+</header>
+{{ define "menu" }}
+<ul class="menu">
+  {{- $current := . }}
+  {{- range site.Menus.main }}
+  <li><a href="{{ .URL }}"{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) (eq $current.RelPermalink .URL) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+  {{- end }}
+</ul>
+{{ end }}

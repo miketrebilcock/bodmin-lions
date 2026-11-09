@@ -1,0 +1,81 @@
+baseURL = "https://bodminlions.org.uk/"
+locale = "en-GB"
+title = "Bodmin Lions Club"
+enableRobotsTXT = true
+timeZone = "Europe/London"
+disableKinds = ["taxonomy", "term"]
+
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "llms"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changeFreq = "weekly"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[params]
+  description = "Bodmin Lions Club is a volunteer community charity in Bodmin, Cornwall. We run the Bodmin Moor Ten Tors walk, the Father Christmas sleigh and help with the Priory Park fireworks and St Piran's Day — and raise money for local and international good causes."
+  charityNumber = "1178036"
+  email = "bodmin.lions@outlook.com"
+  facebook = "https://www.facebook.com/profile.php?id=100088359887875"
+  founded = "1970-04-28"
+  # TODO(club): the old site says "First Monday" on the home page and "Second Monday" on the contact page — confirm.
+  meetings = "Monthly on the first Monday at 7:30pm"
+  meetingVenue = "The Hole in the Wall, Bodmin"
+  meetingMap = "https://www.google.com/maps/search/?api=1&query=Hole+in+the+Wall+Bodmin"
+  latitude = 50.47179
+  longitude = -4.71924
+  president = "Bill May"
+  secretary = "Sue Newman"
+  treasurer = "Ron Goodgame"
+
+[menus]
+  [[menus.main]]
+    name = "What we do"
+    pageRef = "/events"
+    weight = 10
+  [[menus.main]]
+    name = "What's on"
+    pageRef = "/calendar"
+    weight = 20
+  [[menus.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 30
+  [[menus.main]]
+    name = "Join us"
+    pageRef = "/join"
+    weight = 40
+  [[menus.main]]
+    name = "Ask for help"
+    pageRef = "/funding"
+    weight = 50
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 60
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 70
+
+  [[menus.footer]]
+    name = "Privacy"
+    pageRef = "/privacy"
+    weight = 10
+  [[menus.footer]]
+    name = "Accessibility"
+    pageRef = "/accessibility"
+    weight = 20
+  [[menus.footer]]
+    name = "Links"
+    pageRef = "/links"
+    weight = 30

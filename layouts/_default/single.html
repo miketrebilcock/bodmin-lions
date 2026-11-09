@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="wrap prose">
+  <h1>{{ .Title }}</h1>
+  {{ if eq .Section "news" }}<p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+  {{ with .Params.event }}{{ partial "event-facts.html" . }}{{ end }}
+  {{ with .Params.image }}{{ partial "img.html" (dict "src" . "alt" $.Params.imageAlt "eager" true) }}{{ end }}
+  {{ .Content }}
+  {{ if eq .Section "news" }}<p><a href="/news/">← All news</a></p>{{ end }}
+</article>
+{{ end }}
