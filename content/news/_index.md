@@ -1,6 +1,6 @@
 ---
 title: News
 description: Latest news from Bodmin Lions Club.
-hero: images/heroes/fore-street-bunting.jpg
-heroAlt: "Lions bunting along Fore Street, Bodmin"
+hero: images/heroes/fore-street-crowd.jpg
+heroAlt: "Crowds in Fore Street, Bodmin, under the Lions summer bunting"
 ---

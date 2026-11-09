@@ -3,6 +3,7 @@ title: Join us or volunteer
 description: Give a little back to Bodmin. Join Bodmin Lions Club, or volunteer for a single event such as the Christmas sleigh or Ten Tors walk.
 hero: images/heroes/bunting-volunteers.jpg
 heroAlt: "Two Bodmin Lions in hi-vis putting up bunting in Fore Street"
+heroY: 70
 ---
 We're ordinary local people doing extraordinary things together. We give our time, support our community, make friends and have a good laugh along the way. You don't need special skills or loads of spare time to start a conversation about joining us.
 

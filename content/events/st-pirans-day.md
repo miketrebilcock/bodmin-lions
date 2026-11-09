@@ -10,7 +10,7 @@ event:
   locality: Bodmin
 hero: images/heroes/st-pirans-day-2026.jpg
 heroAlt: "St Piran's Day 2026: the Mayor and guests with Cornish flags outside the Shire Hall, Bodmin"
-heroAnchor: Top
+heroY: 50
 ---
 St Piran is the patron saint of Cornwall and of tin miners. Legend says the 6th-century abbot discovered tin when a black stone in his fire melted and a white cross of tin ran out of it — the origin of St Piran's flag, the flag of Cornwall.
 

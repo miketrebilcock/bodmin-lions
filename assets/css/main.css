@@ -102,6 +102,14 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
 .page-hero .lead{font-size:1.05rem;margin:0;max-width:60ch;text-shadow:0 1px 2px rgba(0,0,0,.5)}
 .photo-credit{position:absolute;z-index:2;right:.75rem;bottom:.4rem;margin:0;font-size:.75rem;color:#fff;opacity:.85}
 @media (max-width:40rem){.page-hero{min-height:13rem}.page-hero .lead{font-size:.95rem}}
-.page-hero .hero-bg{object-position:center center}
-.page-hero.pos-top .hero-bg{object-position:center 15%}
-.page-hero.pos-bottom .hero-bg{object-position:center 85%}
+.page-hero .fy-0{object-position:center 0%}
+.page-hero .fy-10{object-position:center 10%}
+.page-hero .fy-20{object-position:center 20%}
+.page-hero .fy-30{object-position:center 30%}
+.page-hero .fy-40{object-position:center 40%}
+.page-hero .fy-50{object-position:center 50%}
+.page-hero .fy-60{object-position:center 60%}
+.page-hero .fy-70{object-position:center 70%}
+.page-hero .fy-80{object-position:center 80%}
+.page-hero .fy-90{object-position:center 90%}
+.page-hero .fy-100{object-position:center 100%}

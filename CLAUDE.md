@@ -14,6 +14,11 @@ on every push to `main` (and nightly). Club members will usually ask for content
   Use `dateLabel: "March 2026"` when the exact date isn't known.
 - **Migrated posts** (`migrated: true`) came from the old site in Nov 2026. 64 photos still have placeholder
   alt text ("Photo 3: <title>") — when touching a post, look at the photo and replace it with a real description.
+- **Page hero photos:** set `hero: images/heroes/<file>.jpg`, `heroAlt: "…"`, optional `heroCredit: "Photo: …"`
+  and `heroY: 0–100` (vertical focus, steps of 10; 50 = centre, lower shows more of the top) in the page's front matter.
+  Before adding a photo to `assets/images/heroes/`, resize it to at most 1920px and strip metadata:
+  `magick in.jpg -auto-orient -resize '1920x1920>' -strip -interlace JPEG -quality 82 out.jpg`.
+  Check the crop in a browser at desktop and phone widths. `fb_images/` is a git-ignored scratch folder.
 - **Event dates:** update the `event:` block in `content/events/<event>.md` (`start` is ISO date,
   `when` is the human-readable date) AND the matching line in `data/calendar.yaml`.
 - **Officers, email, meeting time:** `[params]` in `hugo.toml`; also check `content/about.md` and `content/contact.md`.

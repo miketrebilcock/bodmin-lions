@@ -4,6 +4,8 @@ date: 2025-10-13
 description: "Do you have spectacles you no longer use? Drop them in the Bodmin Lions boxes at Specsavers and Boots in Bodmin."
 migrated: true
 ---
+![A table covered with donated spectacles](donated-spectacles.jpg)
+
 {{< gallery >}}
 ![Bodmin Lions Recycle for Sight poster, page 1](bodmin-lions-recycle-for-sight.jpg)
 

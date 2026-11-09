@@ -10,9 +10,8 @@ event:
   locality: St Breward
   cost: £20 registration per team
   action: Entries open in January 2027 — the entry form will be posted here.
-hero: images/heroes/ten-tors-start-2026.jpg
-heroAlt: "Walkers setting off on the 2026 Bodmin Lions Ten Tors walk"
-heroCredit: "Photo: Lion Ron"
+hero: images/heroes/ten-tors-tor-climb.jpg
+heroAlt: "Ten Tors walkers climbing a granite tor on Bodmin Moor"
 ---
 The Ten Tors walk is a sponsored team walk of about **13 miles** over moorland on Bodmin Moor. It is **not a race**. In 2026 we held our 43rd walk, with 83 teams and 276 walkers, and teams raised **well over £20,000** for their chosen charities.
 
