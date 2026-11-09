@@ -22,7 +22,7 @@ main:focus{outline:none}
 .site-header{background:var(--blue);color:#fff}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.75rem;padding-bottom:.75rem;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none}
-.brand-mark{font-size:2rem;line-height:1}
+.brand-mark{width:56px;height:56px;border-radius:50%;background:#fff;padding:3px;flex:none}
 .brand-text{display:flex;flex-direction:column;line-height:1.2}
 .brand-text strong{font-size:1.25rem}
 .brand-text span{font-size:.85rem;color:var(--gold)}

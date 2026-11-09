@@ -4,9 +4,9 @@
     <h1>Volunteers making a difference in Bodmin since 1970</h1>
     <p class="lead">We're your local Lions Club. We run the Ten Tors walk on Bodmin Moor, take Father Christmas round the town every December, help put on the Priory Park fireworks — and every penny we raise from the public goes to good causes.</p>
     <p class="cta-row">
-      <a class="btn btn-primary" href="/join/">Join or volunteer</a>
-      <a class="btn" href="/funding/">Ask us for help</a>
-      <a class="btn" href="/calendar/">What's on</a>
+      <a class="btn btn-primary" href="{{ "join/" | relURL }}">Join or volunteer</a>
+      <a class="btn" href="{{ "funding/" | relURL }}">Ask us for help</a>
+      <a class="btn" href="{{ "calendar/" | relURL }}">What's on</a>
     </p>
   </div>
 </section>
@@ -47,7 +47,7 @@
     </li>
   {{ end }}
   </ul>
-  <p><a href="/news/">All news →</a></p>
+  <p><a href="{{ "news/" | relURL }}">All news →</a></p>
 </section>
 
 <section class="wrap prose" aria-labelledby="about-us">

@@ -9,7 +9,7 @@
     {{ range $items }}
     <li>
       <time datetime="{{ .date }}">{{ (time.AsTime .date).Format "Monday 2 January 2006" }}</time>
-      <span>{{ if .page }}<a href="{{ .page }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}{{ with .note }} <small>— {{ . }}</small>{{ end }}</span>
+      <span>{{ if .page }}<a href="{{ strings.TrimPrefix "/" .page | relURL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}{{ with .note }} <small>— {{ . }}</small>{{ end }}</span>
     </li>
     {{ end }}
   </ol>

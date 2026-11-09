@@ -1,7 +1,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/" aria-label="Bodmin Lions Club home">
-      <span class="brand-mark" aria-hidden="true">🦁</span>
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Bodmin Lions Club home">
+      {{- with resources.Get "images/lions-emblem.png" }}{{ $l := .Resize "112x webp" }}
+      <img class="brand-mark" src="{{ $l.RelPermalink }}" width="56" height="56" alt="">{{ end }}
       <span class="brand-text"><strong>Bodmin Lions</strong><span>We serve · Dynergh</span></span>
     </a>
     <nav aria-label="Main">
