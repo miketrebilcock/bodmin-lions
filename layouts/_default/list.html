@@ -1,15 +1,25 @@
 {{ define "main" }}
 <div class="wrap">
   <div class="prose"><h1>{{ .Title }}</h1>{{ .Content }}</div>
+  {{ $pages := .Pages }}
+  {{ $pager := .Paginate $pages }}
   <ul class="cards">
-  {{ range .Pages }}
+  {{ range $pager.Pages }}
     <li class="card">
+      {{ if eq .Section "news" }}{{ partial "thumb.html" . }}{{ end }}
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ if eq .Section "news" }}<p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+      {{ if eq .Section "news" }}<p class="meta">{{ partial "date.html" . }}</p>{{ end }}
       {{ with .Params.event }}<p class="meta">Next: {{ .when }}</p>{{ end }}
       <p>{{ .Description | default .Summary | plainify | truncate 180 }}</p>
     </li>
   {{ end }}
   </ul>
+  {{ if gt $pager.TotalPages 1 }}
+  <nav class="pager" aria-label="News pages">
+    {{ with $pager.Prev }}<a href="{{ .URL }}" rel="prev">← Newer</a>{{ end }}
+    <span>Page {{ $pager.PageNumber }} of {{ $pager.TotalPages }}</span>
+    {{ with $pager.Next }}<a href="{{ .URL }}" rel="next">Older →</a>{{ end }}
+  </nav>
+  {{ end }}
 </div>
 {{ end }}

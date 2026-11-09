@@ -1,0 +1,12 @@
+{{- $img := .Page.Resources.Get .Destination -}}
+{{- if $img -}}
+  {{- $w := cond (gt $img.Width 900) 900 $img.Width -}}
+  {{- $r := $img.Resize (printf "%dx webp q75" $w) -}}
+  {{- $big := $img.Resize (printf "%dx webp q80" (cond (gt $img.Width 1600) 1600 $img.Width)) -}}
+  {{- $srcset := printf "%s %dw" $r.RelPermalink $r.Width -}}
+  {{- if gt $img.Width 600 }}{{ $s := $img.Resize "480x webp q70" }}{{ $srcset = printf "%s %dw, %s" $s.RelPermalink $s.Width $srcset }}{{ end -}}
+  <figure class="photo"><a href="{{ $big.RelPermalink }}"><img src="{{ $r.RelPermalink }}" srcset="{{ $srcset }}" sizes="(max-width: 900px) 100vw, 900px" width="{{ $r.Width }}" height="{{ $r.Height }}" alt="{{ .Text }}" loading="lazy" decoding="async"></a></figure>
+{{- else -}}
+  {{- warnf "image %q not found in %s" .Destination .Page.File.Path -}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
+{{- end -}}

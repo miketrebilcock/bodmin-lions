@@ -1,13 +1,18 @@
 {{ define "main" }}
 <section class="hero">
+  {{- with resources.Get "images/hero-fore-street.jpg" }}
+  {{- $l := .Resize "960x webp q72" }}{{ $s := .Resize "640x webp q68" }}
+  <img class="hero-bg" src="{{ $l.RelPermalink }}" srcset="{{ $s.RelPermalink }} 640w, {{ $l.RelPermalink }} 960w" sizes="100vw" width="{{ $l.Width }}" height="{{ $l.Height }}" alt="" fetchpriority="high">
+  {{- end }}
   <div class="wrap">
-    <h1>Volunteers making a difference in Bodmin since 1970</h1>
-    <p class="lead">We're your local Lions Club. We run the Ten Tors walk on Bodmin Moor, take Father Christmas round the town every December, help put on the Priory Park fireworks — and every penny we raise from the public goes to good causes.</p>
+    <h1>Ordinary local people doing extraordinary things for Bodmin</h1>
+    <p class="lead">We're your local Lions Club, here since 1970. We run the Ten Tors walk on Bodmin Moor, take Father Christmas round the town every December, help put on the Priory Park fireworks — and every penny we raise from the public goes to good causes.</p>
     <p class="cta-row">
       <a class="btn btn-primary" href="{{ "join/" | relURL }}">Join or volunteer</a>
       <a class="btn" href="{{ "funding/" | relURL }}">Ask us for help</a>
       <a class="btn" href="{{ "calendar/" | relURL }}">What's on</a>
     </p>
+    <p class="hero-credit">Fore Street, Bodmin, under the Lions' summer bunting</p>
   </div>
 </section>
 
@@ -41,9 +46,10 @@
   <ul class="cards">
   {{ range first 3 (where site.RegularPages "Section" "news") }}
     <li class="card">
-      <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time></p>
+      {{ partial "thumb.html" . }}
+      <p class="meta">{{ partial "date.html" . }}</p>
       <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Summary | plainify | truncate 140 }}</p>
+      <p>{{ .Description | default .Summary | plainify | truncate 140 }}</p>
     </li>
   {{ end }}
   </ul>

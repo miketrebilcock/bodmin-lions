@@ -11,9 +11,11 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="{{ site.Title }}">
-{{- $ogsrc := .Params.image | default "images/lions-emblem.png" }}
-{{- with resources.Get $ogsrc }}{{ $og := cond (eq $ogsrc "images/lions-emblem.png") (.Resize "512x png") (.Fill "1200x630 Center jpg") }}
-<meta property="og:image" content="{{ $og.Permalink }}">{{ end }}
+{{- $og := "" }}
+{{- with .Resources.ByType "image" }}{{ $og = (index . 0).Fill "1200x630 Center jpg q80" }}{{ end }}
+{{- if not $og }}{{ with .Params.image }}{{ with resources.Get . }}{{ $og = .Fill "1200x630 Center jpg q80" }}{{ end }}{{ end }}{{ end }}
+{{- if not $og }}{{ $og = (resources.Get "images/lions-emblem.png").Resize "512x png" }}{{ end }}
+<meta property="og:image" content="{{ $og.Permalink }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#00338D">
 {{- with resources.Get "images/lions-emblem.png" }}

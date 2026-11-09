@@ -14,7 +14,7 @@ Bodmin Lions are part of the joint committee that organises the 5 November firew
 
 Nobody on the committee, gate staff, helpers or marshals is paid. **All profits are given each February to children's and youth organisations in Bodmin and the surrounding villages.**
 
-2026 was the **30th display** at Priory Park, set to music from 1996. If you missed it, [watch the drone video on YouTube](https://www.youtube.com/watch?v=zadx8xSVwN4).
+2026 was the **30th display** at Priory Park, set to music from 1996 and with a laser show. It is a ticketed event; tickets are sold in advance, including at Morrisons Bodmin in the days before. If you missed it, [watch the drone video on YouTube](https://www.youtube.com/watch?v=zadx8xSVwN4).
 
 **Please note:** traders selling light-up toys outside Priory Park are not supporting any charity involved with the event. Bodmin Lions have a stall inside.
 

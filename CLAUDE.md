@@ -6,9 +6,14 @@ on every push to `main` (and nightly). Club members will usually ask for content
 
 ## How to make common changes
 
-- **News post:** new file `content/news/YYYY-MM-DD-short-slug.md` with `title`, `date`, `description`
-  (one sentence, under 160 characters), and optionally `image: images/<file>` + `imageAlt`.
-  Put photos in `assets/images/` — Hugo resizes them. Write in plain British English, short paragraphs.
+- **News post:** a folder `content/news/YYYY-MM-DD-short-slug/` containing `index.md` (front matter:
+  `title`, `date`, `description` — one sentence under 160 characters) and the post's photos.
+  Put photos in the text as `![what the photo shows](photo.jpg)`; several in a row go inside
+  `{{< gallery >}} … {{< /gallery >}}`. The first photo becomes the thumbnail and social-media image.
+  Hugo resizes everything and strips camera metadata. Write in plain British English, short paragraphs.
+  Use `dateLabel: "March 2026"` when the exact date isn't known.
+- **Migrated posts** (`migrated: true`) came from the old site in Nov 2026. 64 photos still have placeholder
+  alt text ("Photo 3: <title>") — when touching a post, look at the photo and replace it with a real description.
 - **Event dates:** update the `event:` block in `content/events/<event>.md` (`start` is ISO date,
   `when` is the human-readable date) AND the matching line in `data/calendar.yaml`.
 - **Officers, email, meeting time:** `[params]` in `hugo.toml`; also check `content/about.md` and `content/contact.md`.

@@ -33,6 +33,6 @@
   {{- $graph = $graph | append $ev }}
 {{- end }}
 {{- if and .IsPage (eq .Section "news") }}
-  {{- $graph = $graph | append (dict "@type" "NewsArticle" "headline" .Title "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "publisher" (dict "@id" (printf "%s#org" site.BaseURL)) "mainEntityOfPage" .Permalink) }}
+  {{- $graph = $graph | append (dict "@type" "NewsArticle" "headline" .Title "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "publisher" (dict "@id" (printf "%s#org" site.BaseURL)) "mainEntityOfPage" .Permalink "image" (cond (gt (len (.Resources.ByType "image")) 0) (((index (.Resources.ByType "image") 0).Resize "1200x jpg q80").Permalink) "")) }}
 {{- end }}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>

@@ -1,0 +1,3 @@
+{{- $img := "" -}}
+{{- with .Resources.ByType "image" }}{{ $img = index . 0 }}{{ end -}}
+{{- with $img }}{{ $t := .Fill "640x360 Center webp q70" }}<img class="thumb" src="{{ $t.RelPermalink }}" width="320" height="180" alt="" loading="lazy">{{ end -}}
