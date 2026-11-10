@@ -125,3 +125,12 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
   .page-hero.split .wrap > *{max-width:none}
   .page-hero.split .photo-credit{top:12.6rem;bottom:auto}
 }
+/* A nod to Cornwall: St Piran's flag (white cross on black) */
+.flag,.flag-mini{display:inline-block;vertical-align:-.1em;border-radius:2px;outline:1px solid rgba(255,255,255,.35)}
+.flag-mini{width:1.2em;height:.72em;margin-right:.3em}
+.flag{width:1.75rem;height:1.05rem;margin-right:.6rem;flex:none}
+.brand-text span span{color:inherit;font-size:inherit}
+.footer-kernow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.25rem 1.5rem;margin-top:1.75rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.18);font-size:.9rem;color:#c9d2e3}
+.footer-kernow p{margin:0}
+.footer-kernow p:first-child{display:flex;align-items:center}
+.footer-kernow [lang="kw"]{font-style:italic;color:#fff}
