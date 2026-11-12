@@ -1,9 +1,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Bodmin Lions Club home">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} home">
       {{- with resources.Get "images/lions-emblem.png" }}{{ $l := .Resize "112x webp" }}
       <img class="brand-mark" src="{{ $l.RelPermalink }}" width="56" height="56" alt="">{{ end }}
-      <span class="brand-text"><strong>Bodmin Lions</strong><span>We serve · {{ partial "kernow-flag.html" "flag-mini" }}<span lang="kw">Dynnargh</span></span></span>
+      <span class="brand-text"><strong>{{ site.Title }}</strong><span>We serve · {{ partial "kernow-flag.html" "flag-mini" }}<span lang="kw">Dynnargh</span></span></span>
     </a>
     <nav aria-label="Main">
       <details class="nav-toggle">
