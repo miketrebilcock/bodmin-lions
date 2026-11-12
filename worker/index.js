@@ -25,6 +25,9 @@ const FIELDS = [
   ["fundraising_done", "Done any fundraising / asked others?", true, 3],
   ["fundraising", "Fundraising details", true, 3000],
   ["funds_raised", "Funds raised so far (£)", false, 20],
+  ["insured", "Insured (equipment and injury risk)?", true, 12],
+  ["insurance_details", "Insurance details", false, 1000],
+  ["ownership", "Equipment owned by the beneficiary?", true, 12],
   ["interests", "Personal interests (trustees)", false, 1000],
   ["further", "Further information", false, 3000],
   ["consent_data", "Agrees to use of data", true, 3],
@@ -36,7 +39,7 @@ const FIELDS = [
 const SECTIONS = [
   ["1. Applicant details", ["name", "organisation", "address", "postcode", "email", "phone", "mobile"]],
   ["2. Purpose of support", ["purpose", "total_cost", "amount_requested"]],
-  ["3. Additional information", ["fundraising_done", "fundraising", "funds_raised", "interests", "further"]],
+  ["3. Additional information", ["fundraising_done", "fundraising", "funds_raised", "insured", "insurance_details", "ownership", "interests", "further"]],
   ["4–6. Consent and acceptance", ["consent_data", "consent_publicity", "accept", "signature"]],
 ];
 
@@ -78,7 +81,9 @@ async function grantRequest(request, env, url) {
     if (value.length > max || (required && !value)) return go("/funding/problem/");
     data[key] = value;
   }
-  if (!EMAIL_RE.test(data.email) || !["Yes", "No"].includes(data.fundraising_done)) {
+  if (!EMAIL_RE.test(data.email) || !["Yes", "No"].includes(data.fundraising_done) ||
+      !["Yes", "No", "Not relevant"].includes(data.insured) ||
+      !["Yes", "No", "No equipment"].includes(data.ownership)) {
     return go("/funding/problem/");
   }
   data.consent_publicity ||= "No";

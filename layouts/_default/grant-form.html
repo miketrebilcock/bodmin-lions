@@ -80,6 +80,23 @@
         <label for="funds_raised">Money raised so far (£)</label>
         <input id="funds_raised" name="funds_raised" type="text" inputmode="decimal" maxlength="20">
       </div>
+      <fieldset class="radios">
+        <legend>Is the person or group receiving the grant insured for any equipment it buys, and for any risk of injury from the project or activity? <span aria-hidden="true">*</span></legend>
+        <label><input type="radio" name="insured" value="Yes" required> Yes</label>
+        <label><input type="radio" name="insured" value="No"> No</label>
+        <label><input type="radio" name="insured" value="Not relevant"> Not relevant</label>
+      </fieldset>
+      <div class="field">
+        <label for="insurance_details">Insurance details</label>
+        <span class="hint" id="insurance-hint">For example, who the insurer is and what it covers. If you answered no, please explain.</span>
+        <textarea id="insurance_details" name="insurance_details" rows="2" maxlength="1000" aria-describedby="insurance-hint"></textarea>
+      </div>
+      <fieldset class="radios">
+        <legend>Will any equipment bought with the grant be owned by, and remain the property of, the person or group it is for? <span aria-hidden="true">*</span></legend>
+        <label><input type="radio" name="ownership" value="Yes" required> Yes</label>
+        <label><input type="radio" name="ownership" value="No"> No</label>
+        <label><input type="radio" name="ownership" value="No equipment"> No equipment is being bought</label>
+      </fieldset>
       <div class="field">
         <label for="interests">Personal interests</label>
         <span class="hint" id="interests-hint">Do you know of any personal connection with any of our trustees? If not, leave this blank.</span>
