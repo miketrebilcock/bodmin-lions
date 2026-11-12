@@ -1,6 +1,6 @@
 baseURL = "https://bodminlions.org.uk/"
 locale = "en-GB"
-title = "Bodmin Lions Club"
+title = "Lions Club of Bodmin"
 enableRobotsTXT = true
 timeZone = "Europe/London"
 disableKinds = ["taxonomy", "term"]
