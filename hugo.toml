@@ -32,7 +32,6 @@ disableKinds = ["taxonomy", "term"]
   email = "bodmin.lions@outlook.com"
   facebook = "https://www.facebook.com/profile.php?id=100088359887875"
   founded = "1970-04-28"
-  # TODO(club): the old site says "First Monday" on the home page and "Second Monday" on the contact page — confirm.
   meetings = "Monthly on the first Monday at 7:30pm"
   meetingVenue = "The Hole in the Wall, Bodmin"
   meetingMap = "https://www.google.com/maps/search/?api=1&query=Hole+in+the+Wall+Bodmin"

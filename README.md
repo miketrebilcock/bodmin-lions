@@ -77,7 +77,6 @@ The form doesn't work on the GitHub Pages preview; it shows a note pointing to t
 
 ## Before go-live (club to confirm)
 
-- [ ] Meeting day: the old site says **first** Monday on the home page and **second** Monday on the contact page.
 - [ ] Register a proper domain (e.g. `bodminlions.org.uk`, ~£10/year) in the club's name, with two officers holding the login.
 - [ ] Confirm use of the Lions emblem (taken from Lions Clubs British Isles) follows the Lions brand guidelines.
 - [ ] Ten Tors 2027 venue and entry form; sleigh routes and ASDA dates for 2026.
