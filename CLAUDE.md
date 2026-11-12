@@ -1,7 +1,13 @@
 # Bodmin Lions Club website — notes for Claude
 
-This repo is the Bodmin Lions Club website: a Hugo static site, deployed by `.github/workflows/pages.yml`
-on every push to `main` (and nightly) to Cloudflare (a Worker serving `public/`, see `wrangler.jsonc`) and a GitHub Pages preview. Club members will usually ask for content changes in plain English
+This repo is the Bodmin Lions Club website: a Hugo static site, deployed by `.github/workflows/deploy.yml`
+to Cloudflare (a Worker serving `public/`, see `wrangler.jsonc`) on every push to `main`, and nightly.
+
+**Every change is a pull request with its own preview site. Follow the `website-update` skill**
+(`.claude/skills/website-update/SKILL.md`): branch, PR, share the preview link, and merge only when the person says so.
+Never push to `main` directly.
+
+Club members will usually ask for content changes in plain English
 ("add a news post about…", "change the sleigh dates", "add these photos"). Treat them as non-technical.
 
 ## How to make common changes
@@ -37,4 +43,5 @@ on every push to `main` (and nightly) to Cloudflare (a Worker serving `public/`,
 - Don't add JavaScript, trackers, cookies or third-party embeds without the club agreeing; the privacy page says there are none.
 - Use the Lions emblem only as supplied in `assets/images/lions-emblem.png` (don't recolour or distort it).
 - Before committing run `hugo --gc --minify` and fix any WARN/ERROR.
+- Changes go live by merging a PR (see the `website-update` skill), never by pushing to `main`.
 - Check people named in news posts are happy to be named, particularly children (first names only or none).

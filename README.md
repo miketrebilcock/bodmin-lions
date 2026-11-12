@@ -29,12 +29,12 @@ Non-technical editors can use GitHub's web editor (press `.` in the repo), or we
 hugo server
 ```
 
-## Preview on GitHub Pages
+## How changes go live
 
-Every push to `main` builds and publishes the site to
-https://miketrebilcock.github.io/bodmin-lions/ via `.github/workflows/pages.yml`. It also rebuilds
-nightly so past dates drop off. The preview carries a `noindex` tag (`HUGO_PARAMS_PREVIEW`) so it
-doesn't compete with the real site in search results.
+Every change is a **pull request**. The Deploy workflow (`.github/workflows/deploy.yml`) builds each PR to its
+own preview site, `https://pr-<number>-bodmin-lions.bodmin-lions.workers.dev/`, and posts the link on the PR.
+Previews are hidden from search engines and don't affect the live site. Merging the PR deploys
+bodminlions.org.uk. The live site also rebuilds nightly, so past dates drop off "What's on".
 
 ## Updating with Claude
 
@@ -49,8 +49,8 @@ static file, which is free and unlimited; only the grant form (`/api/grant-reque
 `worker/index.js`) runs code, well inside the free 100,000 requests a day. It isn't Cloudflare *Pages*
 because Pages Functions can't send email.
 
-`.github/workflows/pages.yml` builds with Hugo and deploys on every push to `main` and nightly (so past dates
-drop off "What's on"). One-off setup:
+`.github/workflows/deploy.yml` builds with Hugo and deploys on every push to `main` (a merged PR) and nightly
+(so past dates drop off "What's on"). Pull requests get preview versions instead (see above). One-off setup:
 
 1. Add the club's domain to Cloudflare (Websites → Add a domain) and switch its nameservers to Cloudflare.
 2. **Email → Email Routing**: enable it, and add `bodmin.lions@outlook.com` as a destination address.
@@ -71,7 +71,7 @@ To try the Worker locally: `hugo --gc --minify && npx wrangler dev` (emails are 
 `/funding/apply/` is a plain HTML form (no JavaScript). It posts to `worker/index.js`, which checks it,
 drops spam caught by a hidden "honeypot" field, and emails it to the club with the applicant as Reply-To.
 Nothing is stored. Free-plan Email Routing can only send to verified addresses, which is all we need.
-The form doesn't work on the GitHub Pages preview; it shows a note pointing to the PDF.
+On PR previews the form works and really emails the club, with "[TEST from preview site]" in the subject.
 
 `static/_headers` sets security and caching headers; `static/_redirects` maps old page addresses to new ones.
 
