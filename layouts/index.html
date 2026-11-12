@@ -16,6 +16,15 @@
   </div>
 </section>
 
+{{- /* Elves appeal: shown from 6 weeks before the sleigh starts until its last date (front matter of the sleigh page). */}}
+{{- with site.GetPage "/events/father-christmas-sleigh" }}{{ with .Params.event }}
+{{- $from := (time.AsTime .start).AddDate 0 0 -42 }}{{ $to := (time.AsTime (.end | default .start)).AddDate 0 0 1 }}
+{{- if and (now.After $from) (now.Before $to) }}
+<section class="wrap" aria-labelledby="elves">
+  <p class="notice"><strong id="elves">Father Christmas is coming back to Bodmin — and we need new elves!</strong> Could you spare a few hours over a couple of evenings in December? <a href="{{ "join/" | relURL }}">Find out how to help</a></p>
+</section>
+{{- end }}{{ end }}{{ end }}
+
 {{ $soon := where (where site.RegularPages "Section" "events") "Params.event.start" "ge" (now.Format "2006-01-02") }}
 <section class="wrap" aria-labelledby="coming-up">
   <h2 id="coming-up">Coming up</h2>

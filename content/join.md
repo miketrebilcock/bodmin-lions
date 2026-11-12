@@ -11,7 +11,7 @@ You don't have to become a member to help. Many people start by giving a couple 
 
 ## Volunteer for an event
 
-- **Father Christmas sleigh (December)** — collectors and drivers for evening rounds across Bodmin.
+- **Father Christmas sleigh (December)** — we need new elves! Collectors and drivers for a couple of evenings on Father Christmas's rounds across Bodmin. [More about the sleigh](/events/father-christmas-sleigh/).
 - **Ten Tors walk (May)** — marshals and checkpoint helpers on Bodmin Moor.
 - **Fireworks (5 November)** — set-up, gate staff and marshals in Priory Park.
 - **St Piran's Day (5 March)** — marshalling the schools' parade down Fore Street.

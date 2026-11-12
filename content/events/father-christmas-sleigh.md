@@ -23,6 +23,8 @@ Every December we take our sleigh around the streets of Bodmin collecting for Li
 
 Route maps for each evening will be published here. On Thursdays and Fridays live updates are on our [Facebook page](https://www.facebook.com/profile.php?id=100088359887875). On Christmas Eve you can follow Father Christmas worldwide on the [NORAD Santa Tracker](https://www.noradsanta.org/).
 
-## Help us
+## We need new elves!
 
-We need collectors and drivers for an evening or two. [Email us](mailto:bodmin.lions@outlook.com?subject=Sleigh%20volunteer) or speak to any Lion.
+Could you spare a few hours over a couple of evenings in December? Help Father Christmas on his evening rounds in Bodmin, as a collector or a driver. You don't need to be a Lion, and we'll show you what to do.
+
+[Email us to find out more](mailto:bodmin.lions@outlook.com?subject=Sleigh%20elf), message us on [Facebook](https://www.facebook.com/profile.php?id=100088359887875), or speak to any Lion.
