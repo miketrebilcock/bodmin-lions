@@ -13,7 +13,7 @@
   "parentOrganization" (dict "@type" "NGO" "name" "Lions Clubs International" "url" "https://www.lionsclubs.org/")
   "areaServed" (dict "@type" "Place" "name" "Bodmin, Cornwall, United Kingdom")
   "address" (dict "@type" "PostalAddress" "addressLocality" "Bodmin" "addressRegion" "Cornwall" "addressCountry" "GB")
-  "sameAs" (slice site.Params.facebook (printf "https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/%s" site.Params.charityNumber))
+  "sameAs" (slice site.Params.facebook site.Params.charityRegister)
 -}}
 {{- $graph := slice $org (dict "@type" "WebSite" "@id" (printf "%s#site" site.BaseURL) "url" site.BaseURL "name" site.Title "inLanguage" "en-GB" "publisher" (dict "@id" (printf "%s#org" site.BaseURL))) -}}
 {{- with .Params.event }}
