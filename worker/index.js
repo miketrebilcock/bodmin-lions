@@ -90,7 +90,9 @@ async function grantRequest(request, env, url) {
 
   const received = new Date().toLocaleString("en-GB", { timeZone: "Europe/London", dateStyle: "long", timeStyle: "short" });
   const who = data.organisation ? `${data.organisation} (${data.name})` : data.name;
-  const subject = `Grant application: ${oneLine(who)} – £${oneLine(data.amount_requested)}`.slice(0, 200);
+  // Sent from a PR preview (…workers.dev) rather than the live site: label it so nobody acts on a test.
+  const test = url.hostname.endsWith(".workers.dev") ? "[TEST from preview site] " : "";
+  const subject = `${test}Grant application: ${oneLine(who)} – £${oneLine(data.amount_requested)}`.slice(0, 200);
 
   try {
     // The binding (wrangler.jsonc) only allows GRANT_TO, which must be verified in Email Routing.

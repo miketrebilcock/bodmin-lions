@@ -4,7 +4,7 @@
 <article class="wrap prose">
   {{ if not .Params.hero }}<h1>{{ .Title }}</h1>{{ end }}
   {{ if site.Params.preview }}
-  <p class="notice"><strong>This is a preview copy of the website.</strong> The online form only works on the live site — please use the <a href="{{ "docs/grant-request-form.pdf" | relURL }}">PDF form</a> instead.</p>
+  <p class="notice"><strong>This is a preview copy of the website.</strong> Anything sent with this form really does go to the club, so only use it for testing. To apply for a grant, use <a href="https://bodminlions.org.uk/funding/apply/">bodminlions.org.uk</a>.</p>
   {{ end }}
   {{ .Content }}
 

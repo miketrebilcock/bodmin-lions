@@ -1,4 +1,4 @@
-// Cloudflare Worker config. Deployed by .github/workflows/pages.yml (job "cloudflare") after Hugo builds ./public.
+// Cloudflare Worker config. Deployed by .github/workflows/deploy.yml after Hugo builds ./public.
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "bodmin-lions",
