@@ -11,7 +11,7 @@
 
 ## Events we run or support
 {{ range sort (where site.RegularPages "Section" "events") "Params.event.start" }}
-- [{{ .Title }}]({{ .Permalink }}): {{ .Description }} Next: {{ .Params.event.when }}, {{ .Params.event.venue }}.
+- [{{ .Title }}]({{ .Permalink }}): {{ .Description }}{{ with .Params.event }} Next: {{ .when }}, {{ .venue }}.{{ end }}
 {{- end }}
 
 ## Key pages
