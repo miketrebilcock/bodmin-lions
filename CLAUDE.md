@@ -1,7 +1,7 @@
 # Bodmin Lions Club website — notes for Claude
 
 This repo is the Bodmin Lions Club website: a Hugo static site, deployed by `.github/workflows/pages.yml`
-on every push to `main` (and nightly). Club members will usually ask for content changes in plain English
+on every push to `main` (and nightly) to Cloudflare (a Worker serving `public/`, see `wrangler.jsonc`) and a GitHub Pages preview. Club members will usually ask for content changes in plain English
 ("add a news post about…", "change the sleigh dates", "add these photos"). Treat them as non-technical.
 
 ## How to make common changes
@@ -23,6 +23,9 @@ on every push to `main` (and nightly). Club members will usually ask for content
 - **Event dates:** update the `event:` block in `content/events/<event>.md` (`start` is ISO date,
   `when` is the human-readable date) AND the matching line in `data/calendar.yaml`.
 - **Officers, email, meeting time:** `[params]` in `hugo.toml`; also check `content/about.md` and `content/contact.md`.
+- **Grant application form:** the questions are in `layouts/_default/grant-form.html`; the same field
+  names, labels and required/max-length rules are in `FIELDS` in `worker/index.js`. Change both together.
+  Keep `static/docs/grant-request-form.pdf` in step with the form.
 - **Internal links** in Markdown are written root-relative (`/join/`); a render hook makes them work under any base path.
   In templates use `relURL` / `.RelPermalink`, never a hard-coded leading `/`.
 

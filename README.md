@@ -42,13 +42,36 @@ The simplest way to keep the site up to date is to ask Claude (Claude Code, in t
 English — "add a news post about the sleigh raising £5,000, with these photos". `CLAUDE.md` tells it
 how the site is organised and the rules to follow.
 
-## Deploy to Cloudflare Pages (free, for the real domain)
+## Deploy to Cloudflare (free, for the real domain)
 
-1. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git → choose this repo.
-2. Framework preset **Hugo**. Build command `hugo --gc --minify`, output directory `public`.
-3. Environment variable `HUGO_VERSION` = `0.168.0`.
-4. Add the custom domain (e.g. `bodminlions.org.uk`) under the project's Custom domains.
-5. Optional: create a Deploy Hook and call it nightly so the calendar stays current.
+The site runs as a **Cloudflare Worker with static assets** (`wrangler.jsonc`). Every page and photo is a
+static file, which is free and unlimited; only the grant form (`/api/grant-request`, handled by
+`worker/index.js`) runs code, well inside the free 100,000 requests a day. It isn't Cloudflare *Pages*
+because Pages Functions can't send email.
+
+`.github/workflows/pages.yml` builds with Hugo and deploys on every push to `main` and nightly (so past dates
+drop off "What's on"). One-off setup:
+
+1. Add the club's domain to Cloudflare (Websites → Add a domain) and switch its nameservers to Cloudflare.
+2. **Email → Email Routing**: enable it, and add `bodmin.lions@outlook.com` as a destination address.
+   Cloudflare emails that inbox a verification link — click it. Email Routing replaces the domain's MX
+   records, so set up any forwarding (e.g. `info@` → the Outlook inbox) there too.
+3. If the domain isn't `bodminlions.org.uk`, change `GRANT_FROM` in `wrangler.jsonc` and `baseURL` in `hugo.toml`.
+4. My Profile → API Tokens → Create Token → template **Edit Cloudflare Workers** (the club's account only).
+5. GitHub repo → Settings → Secrets and variables → Actions: add `CLOUDFLARE_API_TOKEN` (the token) and
+   `CLOUDFLARE_ACCOUNT_ID` (on the Workers & Pages overview page). Until they exist the deploy step is skipped.
+6. Push to `main` (or Actions → Deploy → Run workflow). Then, in the `bodmin-lions` Worker → Settings →
+   Domains & Routes, add the custom domain.
+7. Send a test application from `/funding/apply/` and check it arrives (look in Junk the first time).
+
+To try the Worker locally: `hugo --gc --minify && npx wrangler dev` (emails are written to `.wrangler/tmp/email/`).
+
+### Online grant application form
+
+`/funding/apply/` is a plain HTML form (no JavaScript). It posts to `worker/index.js`, which checks it,
+drops spam caught by a hidden "honeypot" field, and emails it to the club with the applicant as Reply-To.
+Nothing is stored. Free-plan Email Routing can only send to verified addresses, which is all we need.
+The form doesn't work on the GitHub Pages preview; it shows a note pointing to the PDF.
 
 `static/_headers` sets security and caching headers; `static/_redirects` maps old page addresses to new ones.
 

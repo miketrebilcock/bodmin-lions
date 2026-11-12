@@ -134,3 +134,21 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
 .footer-kernow p{margin:0}
 .footer-kernow p:first-child{display:flex;align-items:center}
 .footer-kernow [lang="kw"]{font-style:italic;color:#fff}
+/* Forms (grant application) */
+.notice{background:var(--surface);border-left:4px solid var(--gold);padding:.8rem 1rem;border-radius:0 var(--radius) var(--radius) 0}
+.form fieldset{border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.2rem 1.2rem;margin:1.5rem 0;min-width:0}
+.form legend{font-weight:700;font-size:1.15rem;padding:0 .4rem}
+.form fieldset.radios{border:0;padding:0;margin:1rem 0}
+.form fieldset.radios legend{font-size:1rem;padding:0;margin-bottom:.4rem}
+.form .radios label{display:inline-flex;align-items:center;gap:.4rem;margin-right:1.5rem;font-weight:500}
+.field{display:flex;flex-direction:column;gap:.3rem;margin:1rem 0}
+.field label{font-weight:600}
+.field-short{max-width:14rem}
+.field-row{display:grid;gap:0 1rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.hint{color:var(--muted);font-size:.95rem}
+.form input[type=text],.form input[type=email],.form input[type=tel],.form textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--muted);border-radius:6px;padding:.5rem .6rem;width:100%}
+.form textarea{resize:vertical}
+.form input[type=radio],.form input[type=checkbox]{width:1.3rem;height:1.3rem;accent-color:var(--blue);flex:none;margin:.2rem 0 0}
+.check{display:flex;gap:.6rem;align-items:flex-start;margin:1rem 0}
+.form button{font:inherit;cursor:pointer}
+.hp,.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

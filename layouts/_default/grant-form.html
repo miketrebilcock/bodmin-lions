@@ -1,0 +1,125 @@
+{{ define "main" }}
+{{- /* Online version of static/docs/grant-request-form.pdf. Posts to worker/index.js
+     (Cloudflare Worker), which emails it to the club. No JavaScript runs in the browser. */ -}}
+<article class="wrap prose">
+  {{ if not .Params.hero }}<h1>{{ .Title }}</h1>{{ end }}
+  {{ if site.Params.preview }}
+  <p class="notice"><strong>This is a preview copy of the website.</strong> The online form only works on the live site — please use the <a href="{{ "docs/grant-request-form.pdf" | relURL }}">PDF form</a> instead.</p>
+  {{ end }}
+  {{ .Content }}
+
+  <form class="form" method="post" action="{{ "api/grant-request" | relURL }}" accept-charset="utf-8">
+    <p class="hint">Questions marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> must be answered.</p>
+
+    <fieldset>
+      <legend>1. Your details</legend>
+      <div class="field">
+        <label for="name">Your name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" autocomplete="name" required maxlength="120">
+      </div>
+      <div class="field">
+        <label for="organisation">Group or organisation</label>
+        <span class="hint" id="organisation-hint">Only if you are applying on behalf of a group. You will be our contact person.</span>
+        <input id="organisation" name="organisation" type="text" autocomplete="organization" maxlength="160" aria-describedby="organisation-hint">
+      </div>
+      <div class="field">
+        <label for="address">Address <span aria-hidden="true">*</span></label>
+        <textarea id="address" name="address" rows="3" autocomplete="street-address" required maxlength="400"></textarea>
+      </div>
+      <div class="field field-short">
+        <label for="postcode">Postcode <span aria-hidden="true">*</span></label>
+        <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required maxlength="10" autocapitalize="characters">
+      </div>
+      <div class="field">
+        <label for="email">Email address <span aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" required maxlength="200">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Telephone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30">
+        </div>
+        <div class="field">
+          <label for="mobile">Mobile</label>
+          <input id="mobile" name="mobile" type="tel" autocomplete="tel" maxlength="30">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. What the money is for</legend>
+      <div class="field">
+        <label for="purpose">Why do you need support, what will the money be used for, and what difference will it make? <span aria-hidden="true">*</span></label>
+        <span class="hint" id="purpose-hint">We prefer to pay for tangible things (equipment rather than running costs). If our grant would cover only part of the cost, please say so.</span>
+        <textarea id="purpose" name="purpose" rows="7" required maxlength="5000" aria-describedby="purpose-hint"></textarea>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="total_cost">Total cost, including VAT (£) <span aria-hidden="true">*</span></label>
+          <input id="total_cost" name="total_cost" type="text" inputmode="decimal" required maxlength="20">
+        </div>
+        <div class="field">
+          <label for="amount_requested">Amount you are asking us for (£) <span aria-hidden="true">*</span></label>
+          <input id="amount_requested" name="amount_requested" type="text" inputmode="decimal" required maxlength="20">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Other information</legend>
+      <fieldset class="radios">
+        <legend>Have you done any fundraising, or asked other organisations or groups for support? <span aria-hidden="true">*</span></legend>
+        <label><input type="radio" name="fundraising_done" value="Yes" required> Yes</label>
+        <label><input type="radio" name="fundraising_done" value="No"> No</label>
+      </fieldset>
+      <div class="field">
+        <label for="fundraising">If yes, what have you done and how much have you raised? If no, why not? <span aria-hidden="true">*</span></label>
+        <textarea id="fundraising" name="fundraising" rows="5" required maxlength="3000"></textarea>
+      </div>
+      <div class="field field-short">
+        <label for="funds_raised">Money raised so far (£)</label>
+        <input id="funds_raised" name="funds_raised" type="text" inputmode="decimal" maxlength="20">
+      </div>
+      <div class="field">
+        <label for="interests">Personal interests</label>
+        <span class="hint" id="interests-hint">Do you know of any personal connection with any of our trustees? If not, leave this blank.</span>
+        <textarea id="interests" name="interests" rows="2" maxlength="1000" aria-describedby="interests-hint"></textarea>
+      </div>
+      <div class="field">
+        <label for="further">Anything else that would help us decide?</label>
+        <textarea id="further" name="further" rows="4" maxlength="3000"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Payment, data protection and agreement</legend>
+      <p><strong>Payment.</strong> If your application succeeds, we will usually ask you to accept our grant conditions in writing before we pay by cheque or bank transfer. If the conditions aren't met, the grant must be returned to the club.</p>
+      <p><strong>Your information.</strong> We use what you tell us only to consider your application. We may share it with people or organisations our trustees think appropriate for that purpose. If you give us details about anyone else, you must have their permission. See our <a href="{{ "privacy/" | relURL }}">privacy page</a>.</p>
+      <div class="check">
+        <input id="consent_data" name="consent_data" type="checkbox" value="Yes" required>
+        <label for="consent_data">I agree to Bodmin Lions Club using the information on this form, as described above, and I have permission to share any other person's details I have given. <span aria-hidden="true">*</span></label>
+      </div>
+      <div class="check">
+        <input id="consent_publicity" name="consent_publicity" type="checkbox" value="Yes">
+        <label for="consent_publicity">If a grant is made, you may publicise it, including photos or video of the presentation.</label>
+      </div>
+      <div class="check">
+        <input id="accept" name="accept" type="checkbox" value="Yes" required>
+        <label for="accept">I understand and accept these requirements and ask for my application to be considered by Bodmin Lions Club. <span aria-hidden="true">*</span></label>
+      </div>
+      <div class="field">
+        <label for="signature">Type your full name as your signature <span aria-hidden="true">*</span></label>
+        <input id="signature" name="signature" type="text" autocomplete="name" required maxlength="120">
+      </div>
+    </fieldset>
+
+    {{- /* Honeypot: hidden from people and screen readers; spam bots tend to fill it in. */}}
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <p><button class="btn btn-primary" type="submit">Send application</button></p>
+  </form>
+</article>
+{{ end }}

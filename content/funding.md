@@ -9,8 +9,8 @@ Bodmin Lions support local groups and individuals in the Bodmin area. Recent exa
 
 ## How to apply
 
-1. [Download the request form (PDF, 2 pages)](/docs/grant-request-form.pdf).
-2. Save it to your device, fill it in and save it again.
-3. Email it to [bodmin.lions@outlook.com](mailto:bodmin.lions@outlook.com?subject=Funding%20request).
+**[Apply online](/funding/apply/)** — it takes about 15 minutes.
+
+If you'd rather use paper, [download the request form (PDF, 2 pages)](/docs/grant-request-form.pdf), fill it in and email it to [bodmin.lions@outlook.com](mailto:bodmin.lions@outlook.com?subject=Funding%20request).
 
 Requests are considered at our monthly meeting. If you can't use the form, email us and we'll help.

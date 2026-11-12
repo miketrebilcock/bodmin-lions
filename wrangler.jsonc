@@ -1,0 +1,23 @@
+// Cloudflare Worker config. Deployed by .github/workflows/pages.yml (job "cloudflare") after Hugo builds ./public.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bodmin-lions",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // Only the form handler runs code; every page and image is served as a free static asset.
+    "run_worker_first": ["/api/*"],
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // Cloudflare Email Routing: may only send to this address (keep GRANT_TO the same), which must be verified under Email → Email Routing.
+  "send_email": [{ "name": "EMAIL", "destination_address": "bodmin.lions@outlook.com" }],
+  "vars": {
+    "GRANT_TO": "bodmin.lions@outlook.com",
+    // Must be an address on the club's domain (Email Routing enabled). No mailbox needed.
+    "GRANT_FROM": "website@bodminlions.org.uk"
+  },
+  "observability": { "enabled": true }
+}
