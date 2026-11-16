@@ -10,3 +10,6 @@
 /contact/Contact.html                                /contact/                       301
 /Links/Links.html                                    /links/                         301
 /Funding/Request.html                                /funding/                       301
+
+# The new members' introduction was a PDF until Nov 2026; it is now a web page.
+/docs/new-member-introduction.pdf                    /new-members/                   301
