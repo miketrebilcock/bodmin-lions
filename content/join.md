@@ -20,7 +20,9 @@ You don't have to become a member to help. Many people start by giving a couple 
 
 Members meet once a month, help run events, decide together where the money goes, and get to know people across Bodmin. We welcome everyone over 18, whatever your age or background. Members pay a modest annual subscription to cover club running costs.
 
-[Read our introduction for new members (PDF, 5 pages)](/docs/new-member-introduction.pdf)
+[Read our introduction for new members](/new-members/) to find out how the club works, who's who and the steps to joining.
+
+When you're ready, fill in the [membership application form (PDF)](/docs/membership-application-form.pdf). You can type into it on a computer, or print it and fill it in by hand. Send it to [bodmin.lions@outlook.com](mailto:bodmin.lions@outlook.com?subject=Membership%20application), or ask us for a paper copy. It's Lions Clubs International's standard form, so it shows fees in US dollars — don't worry about those; we'll explain what you'd pay.
 
 ## Get in touch
 

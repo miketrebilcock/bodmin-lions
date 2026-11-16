@@ -22,9 +22,9 @@ Until early 2018 we were an all-male club. We are now a mixed club of around 26 
 
 | Role | Name |
 | --- | --- |
-| President | Bill May |
-| Secretary | Sue Newman |
-| Treasurer | Ron Goodgame |
+| President | {{< param "president" >}} |
+| Secretary | {{< param "secretary" >}} |
+| Treasurer | {{< param "treasurer" >}} |
 
 ## Part of something bigger
 

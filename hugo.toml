@@ -42,8 +42,15 @@ disableKinds = ["taxonomy", "term"]
   president = "Bill May"
   secretary = "Sue Newman"
   treasurer = "Ron Goodgame"
+  publicity = "Kelly May"
+  healthSafety = "Kevin Marshall"
+  tailTwister = "Keith Richardson"
 
 [menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 5
   [[menus.main]]
     name = "What we do"
     pageRef = "/events"
