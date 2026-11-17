@@ -47,6 +47,16 @@ main:focus{outline:none}
 .hero-credit{margin:2.5rem 0 0;font-size:.85rem;opacity:.85}
 @media (max-width:40rem){.hero::before{background:rgba(0,34,102,.82)}.hero{min-height:0;padding:3rem 0 2rem}}
 .hero h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin:0 0 1rem;max-width:22ch}
+/* Home hero entrance: photo settles in with a slow zoom, then the text rises into view one line at a time. CSS only, no JavaScript. */
+@keyframes hero-zoom{from{transform:scale(1.08)}}
+@keyframes hero-rise{from{opacity:0;transform:translateY(1rem)}}
+.hero .hero-bg{animation:hero-zoom 9s cubic-bezier(.2,.6,.3,1) both}
+.hero .wrap > *{animation:hero-rise .9s cubic-bezier(.2,.7,.3,1) both}
+.hero h1{animation-delay:.8s}
+.hero .lead{animation-delay:1.15s}
+.hero .cta-row{animation-delay:1.5s}
+.hero .hero-credit{animation-delay:2s}
+@media (prefers-reduced-motion:reduce){.hero .hero-bg,.hero .wrap > *{animation:none}}
 .lead{font-size:1.2rem;max-width:60ch;margin:0 0 1.5rem}
 .cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin:0}
 .btn{display:inline-block;padding:.75rem 1.2rem;border-radius:999px;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:600}
