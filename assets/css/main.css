@@ -70,6 +70,8 @@ h1,h2,h3{line-height:1.25}
 main>.wrap>h2,section>h2,.band h2{margin-top:2.5rem}
 .prose{max-width:46rem}
 .prose h1{margin-top:2rem}
+.prose dt{font-weight:700;margin-top:1rem}
+.prose dd{margin:0 0 0 1rem}
 .meta{color:var(--muted);font-size:.95rem;margin:.25rem 0}
 .cards{list-style:none;padding:0;margin:1rem 0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem}
